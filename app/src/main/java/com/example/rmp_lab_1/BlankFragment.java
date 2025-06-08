@@ -16,7 +16,7 @@ public class BlankFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         View view = inflater.inflate(R.layout.fragment_blank, container, false);
 
         // Находим элементы по id
@@ -24,12 +24,9 @@ public class BlankFragment extends Fragment {
         EditText editText = view.findViewById(R.id.editText);
         TextView resultText = view.findViewById(R.id.resultText);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String inputText = editText.getText().toString();
-                resultText.setText(inputText);
-            }
+        button.setOnClickListener(v -> {
+            String inputText = editText.getText().toString();
+            resultText.setText(inputText);
         });
 
         return view;
